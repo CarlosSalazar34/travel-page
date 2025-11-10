@@ -14,6 +14,7 @@ header {
     top: 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     background-color: white;
+    z-index: 1000;
 }
 
 header h2 {
@@ -79,12 +80,18 @@ header nav {
     background: url(fondo2.jpg) center;
     background-repeat: no-repeat;
     background-size: cover;
+    animation: BlurIn 1s ease;
+}
+
+@keyframes BlurIn {
+    from { filter: blur(10px); transform: translate(0, 20px); }
 }
 
 .principal h1 {
     font-size: 50px;
     font-weight: 500;
     line-height: 55px;
+    letter-spacing: 5px;
 }
 
 .principal button {
@@ -107,3 +114,76 @@ header nav {
 .principal button:active {
     transform: scale(0.9);
 }
+
+.travels {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    align-items: center;
+}
+
+.travels h2 {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+}
+
+.travels-row {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    max-width: 80%;
+}
+
+
+
+.travel-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+    align-items: flex-start;
+    width: 250px;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.travel-card:hover {
+    transform: translateY(-10px);
+}
+
+.travel-card div:nth-child(1) {
+    width: 250px;
+    height: 200px; 
+}
+
+.travel-card div img {
+    width: 100%;
+    height: 100%;     
+    object-fit: cover;
+    border-radius: 10px; 
+}
+
+.travel-card div:nth-child(2){
+    padding: 2rem 0;
+    margin-left: 1rem
+}
+
+.travel-card div h3 {
+    font-weight: 600;
+    opacity: 50;
+    font-size: 20px;
+    margin-bottom: .5rem;
+}
+
+.travel-card div p {
+    opacity: 0.8;
+}
+
